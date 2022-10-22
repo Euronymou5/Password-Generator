@@ -5,8 +5,9 @@
 
 **First you should have [Python](https://www.python.org/downloads/) installed**
 
-**All you need to do is run the gen.py or gen.exe file!**
+*Use gen.exe file if you don't have python installed*
 
+**All you need to do is run the gen.py or gen.exe file!**
 
 
 **The generated password will be saved in the file passwords.txt:**
