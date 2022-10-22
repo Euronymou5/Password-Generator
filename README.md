@@ -19,6 +19,10 @@
 # Images
 <img src="https://media.discordapp.net/attachments/995599976463859713/1033309941911531520/unknown.png?width=273&height=307">
 
-**Contact**
+-------------------------
+
+# Contact
 
 • Discord: Euronymou5#3155
+
+----------------------------------
