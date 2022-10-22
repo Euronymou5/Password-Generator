@@ -9,7 +9,7 @@
 
 
 
-**All passwords will be saved in the file passwords.txt:**
+**The generated password will be saved in the file passwords.txt:**
 
 
 <img src="https://media.discordapp.net/attachments/995599976463859713/1033311487453823036/unknown.png?width=431&height=299">
