@@ -1,5 +1,5 @@
 # Password-Generator
-**Generate strong passwords programmed in python with ui**
+**Generate strong passwords programmed in python with UI**
 
 # Installation
 
