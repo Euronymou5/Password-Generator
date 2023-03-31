@@ -11,7 +11,7 @@
 
 **All you need to do is run the gen.py or gen.exe file!**
 
-**The generated password will be saved in the file passwords.txt:**
+**The generated password will appear in the text box:**
 
 
 <img src="https://media.discordapp.net/attachments/995599976463859713/1091406081575624815/image.png?width=224&height=106">
