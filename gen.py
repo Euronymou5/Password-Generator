@@ -1,72 +1,50 @@
-from tkinter import *
-import tkinter.font as tkFont
+import tkinter as tk
+import tkinter.ttk as ttk
+from tkinter.scrolledtext import ScrolledText
 import random
+from tkinter import PhotoImage
+import string
+import pyautogui
 
-root = Tk()
+ventana = tk.Tk()
+ventana.title("Password generator")
+logo = PhotoImage(file = "icons/icono.png")
+ventana.iconphoto(False, logo)
+ventana.resizable(width=False, height=False)
+ventana.configure(height=112, width=300)
 
-def GButton_998_command():
-    tam = lol.get()
-    caracter = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&*(){}[]/\?!@#$abcdefghijklmnopqrstuvwxyz"
-    contra = "".join(random.sample(caracter, tam))
-    with open('passwords.txt', 'w') as passwords:
-        passwords.write(contra)
-    passwords.close()
-    GLabel_565=Label(root)
-    GLabel_565["bg"] = "#000000"
-    ft = tkFont.Font(family='Times',size=10)
-    GLabel_565["font"] = ft
-    GLabel_565["fg"] = "#00ff00"
-    GLabel_565["justify"] = "center"
-    GLabel_565["text"] = contra
-    GLabel_565.place(x=60,y=210,width=240,height=60)
+def generar_func():
+    tam = tam_variable.get()
+    caja_contra.delete('1.0', tk.END)
     
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+    num = string.digits
+    symbols = string.punctuation
+    chars = lower + upper + num + symbols
+    temp = random.sample(chars, tam)
+    lol = "".join(temp)
+    
+    caja_contra.insert(tk.END, lol)
+   
+    ventana.clipboard_clear() 
+    ventana.clipboard_append(lol)
+    
+    pyautogui.alert(text="Generated password copied to clipboard.", title="Password generator")
 
-#setting title
-root.title("Password Generator")
-#setting window size
-width=366
-height=381
-screenwidth = root.winfo_screenwidth()
-screenheight = root.winfo_screenheight()
-alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
-root.geometry(alignstr)
-root.resizable(width=False, height=False)
+tam_entry = ttk.Entry(ventana)
+tam_variable = tk.IntVar()
+tam_entry.configure(justify="center",textvariable=tam_variable)
+tam_entry.place(anchor="nw", relx=0.32, rely=0.12, x=0, y=0)
 
-GLabel_352=Label()
-GLabel_352["bg"] = "#000000"
-ft = tkFont.Font(family='Times',size=10)
-GLabel_352["font"] = ft
-GLabel_352["fg"] = "#e60808"
-GLabel_352["justify"] = "center"
-GLabel_352["text"] = ""
-GLabel_352.place(x=0,y=0,width=366,height=381)
+generar_button = ttk.Button(ventana)
+generar_button.configure(text='Gen password')
+generar_button.place(anchor="nw", relx=0.40, rely=0.37, x=0, y=0)
+generar_button.configure(command=generar_func)
 
-lol = IntVar()
-en=Entry(textvariable=lol)
-en.place(x=60,y=80,width=230,height=46)
-en["fg"] = "#333333"
-en["borderwidth"] = "1px"
-en["justify"] = "center"
-ft = tkFont.Font(family='Times',size=10)
-en["font"] = ft
+caja_contra = ScrolledText(ventana)
+caja_contra.place(anchor="nw",relheight=0.23,relwidth=0.68,relx=0.24,rely=0.68,x=0,y=0)
 
-GLabel_612=Label(root)
-ft = tkFont.Font(family='Times',size=11)
-GLabel_612["font"] = ft
-GLabel_612["bg"] = "#000000"
-GLabel_612["fg"] = "#ff0000"
-GLabel_612["justify"] = "center"
-GLabel_612["text"] = "Password lenght (Maximum 77):"
-GLabel_612.place(x=80,y=40,width=190,height=30)
 
-GButton_998=Button(root)
-GButton_998["bg"] = "#f0f0f0"
-ft = tkFont.Font(family='Times',size=12)
-GButton_998["font"] = ft
-GButton_998["fg"] = "#000000"
-GButton_998["justify"] = "center"
-GButton_998["text"] = "Generate password"
-GButton_998.place(x=110,y=140,width=144,height=37)
-GButton_998["command"] = GButton_998_command
-
-root.mainloop()
+if __name__ == "__main__":
+    ventana.mainloop()
