@@ -13,12 +13,12 @@
 **The generated password will be saved in the file passwords.txt:**
 
 
-<img src="https://media.discordapp.net/attachments/995599976463859713/1033311487453823036/unknown.png?width=431&height=299">
+<img src="https://media.discordapp.net/attachments/995599976463859713/1091406081575624815/image.png?width=224&height=106">
 
 ---------------------------------------
 
 # Images
-<img src="https://media.discordapp.net/attachments/995599976463859713/1033309941911531520/unknown.png?width=273&height=307">
+<img src="https://media.discordapp.net/attachments/995599976463859713/1091406376670089256/image.png?width=225&height=105">
 
 -------------------------
 
