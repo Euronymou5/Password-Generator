@@ -7,7 +7,7 @@
 
 *Use gen.exe file if you don't have python installed*
 
-*Then you will have to execute the command in the console (If you are going to use the .py file to start the program): pip install pyautogui*
+*Then you will have to execute the command in the console (If you are going to use the .py file to start the program):* ``pip install pyautogui``
 
 **All you need to do is run the gen.py or gen.exe file!**
 
